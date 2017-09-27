@@ -2,7 +2,7 @@
   "name": "awesome-qr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fwonkas.github.io/awesome-qr",
+  "homepage": "https://awesomeqr.com",
   "dependencies": {
     "qrcode-react": "^0.1.14",
     "react": "^15.6.1",
