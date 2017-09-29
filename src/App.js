@@ -19,7 +19,7 @@ class App extends Component {
   }
   download(e) {
     this.downloadEl.download = "qr-code.png";
-    this.downloadEl.href = this.canvas.refs.canvas.toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+    this.downloadEl.href = this.canvas.refs.canvas.toDataURL("image/png");
   }
   render() {
     return (
