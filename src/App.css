@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.App textarea {
+  width: 512px;
+}
+
+@media (max-width: 600px) {
+  .App textarea {
+    width: 256px;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QRCode from 'qrcode-react';
+import Media from 'react-media';
 import './App.css';
 
 class App extends Component {
@@ -24,10 +25,16 @@ class App extends Component {
     return (
       <div className="App">
         <p className="QRCode">
-          <QRCode size="512" value={this.state.text} ref={el => this.canvas = el}/>
+          <Media query="(max-width: 600px)">
+            {matches => matches ? (
+              <QRCode size="256" value={this.state.text} ref={el => this.canvas = el}/>
+            ) : (
+              <QRCode size="512" value={this.state.text} ref={el => this.canvas = el}/>
+            )}
+          </Media>
         </p>
         <p>
-          <input type="text" placeholder="Type message here" ref={el => this.input = el} onChange={this.change} value={this.state.text}/>
+          <textarea autofocus rows={5} placeholder="Type message here" ref={el => this.input = el} onChange={this.change} value={this.state.text}/>
         </p>
         <p>
           <a href="" ref={el => this.downloadEl = el} onClick={this.download}>Download</a>
